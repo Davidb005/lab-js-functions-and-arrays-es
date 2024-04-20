@@ -40,7 +40,33 @@ let sum=values.reduce((acc, curr)=> acc += curr);
 let average = sum / values.length;
 console.log(average)
 
-// ej 4. Find element
+// ej 5 arrays únicos
+
+function uniquifyArray (array) {
+  const uniqueArray =[];
+  array.forEach(item=>{if(uniqueArray.indexOf(item)=== -1){uniqueArray.push(item);}});
+  return uniqueArray;
+}
+
+
+const words2 = [
+  'crab',
+  'poison',
+  'contagious',
+  'simple',
+  'bring',
+  'sharp',
+  'playground',
+  'poison',
+  'communion',
+  'simple',
+  'bring'
+];
+
+const uniqueWords = uniquifyArray(words2);
+console.log(uniqueWords);
+
+// ej 6. Find element
 
 let words3 = ["machine", "subset", "trouble", "starting", "matter", "eating", "truth", "disobedience"]
 
@@ -60,3 +86,30 @@ console.log(doesWordExist("coding"))
 
 console.log(doesWordExist(" "))
 
+// ejercicio 7: Contar la repetición
+
+const words = [  'machine',
+'matter',
+'subset',
+'trouble',
+'starting',
+'matter',
+'eating',
+'matter',
+'truth',
+'disobedience',
+'matter']
+
+function howManyTimes(array2){
+  const times ={};
+  for(let name of array2){
+    if(times[name]){
+      times[name]++;
+    } else {
+      times[name]=1;
+    }
+  }
+  return times
+}
+const nameTimes = howManyTimes(words);
+console.log(nameTimes)
